@@ -16,7 +16,7 @@ WebUI.navigateToUrl('http://demoaut-mimic.kazurayam.com/')
 
 ChromeDevToolsService cdts = CdpUtils.getService()
 
-captureFullPageScreenshot(cdts, 'screenshot.png')
+captureFullPageScreenshot(cdts, 'tmp/screenshot.png')
 
 WebUI.closeBrowser()
 

@@ -1,6 +1,5 @@
 import com.github.kklisura.cdt.protocol.commands.Emulation as Emulation
 import com.github.kklisura.cdt.protocol.commands.Page as Page
-import com.github.kklisura.cdt.protocol.types.page.CaptureScreenshotFormat as CaptureScreenshotFormat
 import com.github.kklisura.cdt.services.ChromeDevToolsService as ChromeDevToolsService
 import com.katalon.cdp.CdpUtils
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -16,7 +15,7 @@ WebUI.navigateToUrl('http://demoaut.katalon.com/')
 
 ChromeDevToolsService cdts = CdpUtils.getService()
 
-saveWebPageAsMHTML(cdts, 'snapshot.mht')
+saveWebPageAsMHTML(cdts, 'tmp/snapshot.mht')
 
 WebUI.closeBrowser()
 

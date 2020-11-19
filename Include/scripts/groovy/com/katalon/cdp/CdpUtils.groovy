@@ -10,10 +10,10 @@ import com.github.kklisura.cdt.services.types.ChromeTab
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 public class CdpUtils {
-	
+
 	public static String[] getServiceEndpoint() {
 		WebDriver driver = DriverFactory.getWebDriver()
-		
+
 		HasCapabilities hc = ((driver) as HasCapabilities)
 
 		Map<?, ?> m = hc.getCapabilities().asMap()
@@ -23,12 +23,12 @@ public class CdpUtils {
 		String da = m.get('debuggerAddress')
 
 		String[] daElements = da.split(':')
-		
+
 		return daElements
 	}
 
 	public static ChromeDevToolsService getService() {
-		
+
 		WebDriver driver = DriverFactory.getWebDriver()
 
 		String[] daElements = getServiceEndpoint()

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>LogRequestExample of Chrome DevTools Java Client</name>
+   <name>LogRequestExample</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>cefc2f63-66ff-4d2c-97dd-4574695c7a11</testCaseGuid>
