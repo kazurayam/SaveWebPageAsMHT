@@ -9,6 +9,10 @@ import com.github.kklisura.cdt.services.impl.ChromeServiceImpl
 import com.github.kklisura.cdt.services.types.ChromeTab
 import com.kms.katalon.core.webui.driver.DriverFactory
 
+/**
+ * Original:
+ * https://github.com/katalon-studio/katalon-studio-chrome-devtools-protocol-plugin/blob/master/Include/scripts/groovy/com/katalon/cdp/CdpUtils.groovy
+ */
 public class CdpUtils {
 
 	public static String[] getServiceEndpoint() {

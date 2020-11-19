@@ -7,11 +7,39 @@ This project was developed using Katalon Studio version 7.2.2 on Mac Catalina.
 
 ## Problem to solve
 
-I want to save a snapshot of current DOM of Web Page opened in browser into a local file in the [MHTML](https://en.wikipedia.org/wiki/MHTML) format.
+I want to automate the following tasks by scripts in Katalon Studio:
+
+1. to take snapshot of current DOM of Web Page in browser, save it into a local file in the [MHTML](https://en.wikipedia.org/wiki/MHTML) format.
+
+2. to take full screenshots of a web page in multiple viewport sizes (with*height) just as I can do in Chrome DevTools using [Device Mode](https://www.deconetwork.com/blog/how-to-take-full-webpage-screenshots-instantly/) like Galaxy S5, Pixel 2, iPhone 6/7/8, iPad. I want screenshots in the size of PC display of XGA (1024px,768px) and SXGA (1280px,1024px) as well. I want to save the screenshots as *.png files.
 
 ## Demo
 
-1. You need to install Katalon Studio Plugin: [Chrome DevTools Protocal Integration](https://store.katalon.com/product/144/Chrome-DevTools-Protocol-Integration)
+### Prerequisite
+
+1. Into your Katalon Studio, you need to install the Katalon Studio Plugin: [Chrome DevTools Protocal Integration](https://store.katalon.com/product/144/Chrome-DevTools-Protocol-Integration)
+2. Download the zip file of this project from the zip file from the [Releases](https://github.com/kazurayam/SaveWebPageAsMHT/releases) page, unzip and open it with your local Katalon Studio.
+3. I tested this project with KS ver 7.2.2, however the older versions will be ok as well.
+4. You should choose `Google Chrome` as browser to run the demo scripts
+
+### Description of the demos
+
+#### Save web page as MHTML
+
+1. Run [Test Cases/Save web page as MHTML](Scripts/Save web page as MHTML/Script1605707377828.groovy)
+2. It will open a web page 'http://demoaut.katalon.com/' and save it as a single MHTML file
+3. It will write a file [tmp/snapshot.mht](tmp/snapshot.mht)
+
+#### Capture full page in multiple viewport sizes
+
+1. Run [TestCases/Capture full page](Scripts/Capture full page/Script1605616830298.groovy)
+2. It will open a web page `http://demoaut-mimic.kazurayam.com/`
+3. It will take full page screenshots while resizing the viewport to the size of XGA/SXGA/iPhone6/iPad
+4. It will write 4 files: 
+- [tmp/screenshot.png](tmp/screenshot.png)
+- [tmp/screenshot_SXGA.png](tmp/screenshot_SXGA.png)
+- [tmp/screenshot_iPhone6.png](tmp/screenshot_iPhone6.png)
+- [tmp/screenshot_iPad.png](tmp/screenshot_iPad.png)
 
 ## Background
 
@@ -51,7 +79,9 @@ I happend to find the following thread.
 
 - https://github.com/puppeteer/puppeteer/issues/3575
 
-This suggests that Chrome DevTools Protocol supports `captureSnapshot` command, which turns the current DOM of web page into a Streing as MHTML. This looked exactly what I want to do in Katalon Studio!
+This suggests that Chrome DevTools Protocol (also known as **CDP**) supports [`Page.captureSnapshot`](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-captureScreenshot) method, which turns the current DOM of web page into a String as MHTML. 
+
+This looked exactly what I want to do! I realised that my question was how to make use of `Page.captureSnapshot` method of CDP in Katalon Studio.
 
 #### Chrome DevTools Protocol (CDP)
 
@@ -61,7 +91,7 @@ Quoting from :[Chrome DevTools Protocol](https://chromedevtools.github.io/devtoo
 
 >Instrumentation is divided into a number of domains (DOM, Debugger, Network etc.). Each domain defines a number of commands it supports and events it generates. Both commands and events are serialized JSON objects of a fixed structure.
 
-Chrome DevTools Protocol seems to be a new highway for Web UI testers, adding to Selenium WebDriver, to get access to and manipulate web pages.
+
 
 
 #### Katalon Plugin: Chrome DevTools Protocol Integration
@@ -70,7 +100,9 @@ In Nov 2019, Katalon LLC released a Katalon Plugin [Chrome DevTools Protocol Int
 
 >Integrate Chrome Devtools Protocol with Katalon Studio using https://github.com/kklisura/chrome-devtools-java-client.
 
-All this plugins does seems to bundle the jar of [Chrome DevTools Java Client](https://github.com/kklisura/chrome-devtools-java-client) and make it available to Katalon projects.
+This plugin bundles the jar of [Chrome DevTools Java Client](https://github.com/kklisura/chrome-devtools-java-client) and make it available to Katalon projects.
+
+And this plugin provides a class [`com.katalon.cdp.CdpUtils`](Include/scripts/groovy/com/katalon/cdp/CdpUtils.groovy) which implements a factory method that creates an instance of `com.github.kklisure.cdt.services.ChromeDevToolsSerivce` from `com.kms.katalon.core.webui.dirver.DriverFactory`. Provided with this utility, we can use CDP Java Client API together with Katalon's WebUI API.
 
 #### Chrome DevTools Java Client by Kenan Clisura
 
@@ -96,3 +128,11 @@ The list of [examples](https://github.com/kklisura/chrome-devtools-java-client/t
 - [TakeScreenshotExample.java](https://github.com/kklisura/chrome-devtools-java-client/blob/master/cdt-examples/src/main/java/com/github/kklisura/cdt/examples/TakeScreenshotExample.java) --- take the screenshot of the current viewport
 - [TracingExample.java](https://github.com/kklisura/chrome-devtools-java-client/blob/master/cdt-examples/src/main/java/com/github/kklisura/cdt/examples/TracingExample.java) --- show what Chrome's [Trace Event Profile Tools (about:tracing)](https://www.chromium.org/developers/how-tos/trace-event-profiling-tool) records for diagnosing performance problems.
 
+
+
+## Conclusion
+
+Katalon Studio has been solely dependent on Selenium WebDriver for Web UI testing.
+What we could do in Katalon Studio stays within the scope of WebDriver. 
+Now I see, Chrome DevTools Protocol enables Web UI testers to do something exceeding the capability of WebDriver. For example, we can save web page into MHTML easily. CDP is interesting.
+I would look at CDP more deeply looking forward to its better use in Katalon Studio.
