@@ -1,7 +1,7 @@
 Saving Web Page as MHTML in Katalon Studio
 =====
 
-This is a [Katalon Studio](https://www.katalon.com/) project for demonstration purpose. You can download the zip file from the [Releases](https://github.com/kazurayam/SaveWebPageAsMHT/releases) page, unzip and open it with your local Katalon Studio.
+This is a [Katalon Studio](https://www.katalon.com/) project for demonstration purpose.
 
 This project was developed using Katalon Studio version 7.2.2 on Mac Catalina.
 
@@ -17,29 +17,25 @@ I want to automate the following tasks by scripts in Katalon Studio:
 
 ### Prerequisite
 
-1. Into your Katalon Studio, you need to install the Katalon Studio Plugin: [Chrome DevTools Protocal Integration](https://store.katalon.com/product/144/Chrome-DevTools-Protocol-Integration)
+1. Into your Katalon Studio, you need to install the Katalon Studio Plugin: [Chrome DevTools Protocol Integration](https://store.katalon.com/product/144/Chrome-DevTools-Protocol-Integration)
 2. Download the zip file of this project from the zip file from the [Releases](https://github.com/kazurayam/SaveWebPageAsMHT/releases) page, unzip and open it with your local Katalon Studio.
-3. I tested this project with KS ver 7.2.2, however the older versions will be ok as well.
+3. I tested this project with KS ver 7.2.2. But the older versions should do.
 4. You should choose `Google Chrome` as browser to run the demo scripts
 
 ### Description of the demos
 
 #### Save web page as MHTML
 
-1. Run [Test Cases/Save web page as MHTML](Scripts/Save web page as MHTML/Script1605707377828.groovy)
+1. Run [Test Cases/Save web page as MHTML](https://github.com/kazurayam/SaveWebPageAsMHT/blob/master/Scripts/Save%20web%20page%20as%20MHTML/Script1605707377828.groovy)
 2. It will open a web page 'http://demoaut.katalon.com/' and save it as a single MHTML file
 3. It will write a file [tmp/snapshot.mht](tmp/snapshot.mht)
 
 #### Capture full page in multiple viewport sizes
 
-1. Run [TestCases/Capture full page](Scripts/Capture full page/Script1605616830298.groovy)
-2. It will open a web page `http://demoaut-mimic.kazurayam.com/`
-3. It will take full page screenshots while resizing the viewport to the size of XGA/SXGA/iPhone6/iPad
-4. It will write 4 files: 
-- [tmp/screenshot.png](tmp/screenshot.png)
-- [tmp/screenshot_SXGA.png](tmp/screenshot_SXGA.png)
-- [tmp/screenshot_iPhone6.png](tmp/screenshot_iPhone6.png)
-- [tmp/screenshot_iPad.png](tmp/screenshot_iPad.png)
+1. Run [TestCases/Capture full page](https://github.com/kazurayam/SaveWebPageAsMHT/blob/master/Scripts/Capture%20full%20page/Script1605616830298.groovy)
+2. It will open a web page 'http://demoaut-mimic.kazurayam.com/'
+3. It will take a full page screenshot of the page
+4. It will write a file [tmp/screenshot.png](tmp/screenshot.png)
 
 ## Background
 
@@ -53,29 +49,24 @@ ThanTo, Katalon Developer, added a description about this feature.
 
 >Time Capsule captures the MHTML of the page when a test fails. 
 
-[MHTML](https://en.wikipedia.org/wiki/MHTML)? What is it? 
-
-Quoting from [Wikipedia](https://en.wikipedia.org/wiki/MHTML):
+[MHTML](https://en.wikipedia.org/wiki/MHTML)? What is it? Quoting from [Wikipedia](https://en.wikipedia.org/wiki/MHTML):
 
 >MHTML, an initialism of MIME encapsulation of aggregate HTML documents, is a web page archive format used to combine, in a single computer file, the HTML code and its companion resources (such as images, Flash animations, Java applets, and audio and video files) that are represented by external hyperlinks in the web page's HTML code. The content of an MHTML file is encoded using the same techniques that were first developed for HTML email messages, using the MIME content type multipart/related.[1] MHTML files use a .mhtml or .mht filename extension.
 
 OK. Now I understand what MHTML is. 
 
-Inspired by the Time Capsule, I got a new requirement to myself. I want **a Custom Keyword which enables me to save snapshot of web page opened in browser into a single file in MHTML format**. I want to use the keyword as often as I like during WebUI testing in Katalon Studio. I am not sure but Time Capsule in KS ver7.8 is not going to offer such casual keyword.
-
-For what? --- For my [VisualTestingInKatalonStudio](https://forum.katalon.com/t/visual-testing-in-katalon-studio/13361) project. The current version of this project takes web page screenshots in raster images of PNG format. I thought that MHTML might be better than PNG for recording the web page. Especially when I want to do [Visual Testing for multiple viewPortSizes](https://forum.katalon.com/t/hey-katalon-7-8-beta-is-out-with-new-cool-features-its-cooler-to-have-your-feedback/48751/8), the MHTML would be useful.
+Inspired by the Time Capsule, I got a new requirement to myself. I want **a Custom Keyword which enables me to save snapshot of web page opened in browser into a single file in MHTML format**. I want to use the keyword as often as I like during WebUI testing in Katalon Studio. For what? --- For my [VisualTestingInKatalonStudio](https://forum.katalon.com/t/visual-testing-in-katalon-studio/13361) project. The current version of this project takes web page screenshots in raster images of PNG format. I thought that MHTML might be better than PNG for recording the web page. Especially when I want to do [Visual Testing for multiple viewPortSizes](https://forum.katalon.com/t/hey-katalon-7-8-beta-is-out-with-new-cool-features-its-cooler-to-have-your-feedback/48751/8), the MHTML would be useful.
 
 I had another motivation. In [another disucusion](https://forum.katalon.com/t/update-with-katalon-studio-7-7-early-release-of-katalon-testops-visual-testing-image-comparison/45557/8) in the Katalon Forum I was informed of a commercial product [Percy, Visual Testing as a service](https://docs.percy.io/v1/docs/faq). Percy does visual page comparison, but they wrote "it is not designed to accept screenshots, but instead captures DOM snapshots and page assets (CSS, images, etc.)". --- How they do that? In October 2020 I had no idea. But now in November I have got a guess --- Percy possibly utilizes MHTML.
 
-So I have studied how to save pages in MHTML within Katalon Studio. I have learned some points that might be interest Katalon users. I have developed a demo project. Here I will share my findings.
+So I have studied how to save pages in MHTML within Katalon Studio. I have learned some points that might be interesting for Katalon users. I have developed a demo project, and here I share it.
 
 
-
-### Researches
+### My researches
 
 #### Chrome DevTools Protocol supports taking snapshot of current DOM
 
-I happend to find the following thread.
+I happend to find the following thread in the Puppeteer issues.
 
 - https://github.com/puppeteer/puppeteer/issues/3575
 
@@ -85,17 +76,16 @@ This looked exactly what I want to do! I realised that my question was how to ma
 
 #### Chrome DevTools Protocol (CDP)
 
-Quoting from :[Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) 
+But what is "Chrome DevTools Protocol" at all? Quoting from :[Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) 
 
 >The Chrome DevTools Protocol allows for tools to instrument, inspect, debug and profile Chromium, Chrome and other Blink-based browsers. Many existing projects currently use the protocol. The Chrome DevTools uses this protocol and the team maintains its API.
 
 >Instrumentation is divided into a number of domains (DOM, Debugger, Network etc.). Each domain defines a number of commands it supports and events it generates. Both commands and events are serialized JSON objects of a fixed structure.
 
 
-
-
 #### Katalon Plugin: Chrome DevTools Protocol Integration
 
+How can I make use of CDP in Katalon Studio? 
 In Nov 2019, Katalon LLC released a Katalon Plugin [Chrome DevTools Protocol Integration](https://store.katalon.com/product/144/Chrome-DevTools-Protocol-Integration). In its [README](https://github.com/katalon-studio/katalon-studio-chrome-devtools-protocol-plugin), it writes:
 
 >Integrate Chrome Devtools Protocol with Katalon Studio using https://github.com/kklisura/chrome-devtools-java-client.
@@ -106,11 +96,11 @@ And this plugin provides a class [`com.katalon.cdp.CdpUtils`](Include/scripts/gr
 
 #### Chrome DevTools Java Client by Kenan Clisura
 
-Quoting from its [README](https://github.com/kklisura/chrome-devtools-java-client):
+What is Chrome DevTools Java Client? Quoting from its [README](https://github.com/kklisura/chrome-devtools-java-client):
 
->Chrome DevTools Java Client is a DevTools client - in Java. (: It can be used for instrumenting, inspecting, debuging and profiling Chromium, Chrome and other Blink-based browsers. 
+>Chrome DevTools Java Client is a DevTools client - in Java.
 
-The list of [examples](https://github.com/kklisura/chrome-devtools-java-client/tree/master/cdt-examples/src/main/java/com/github/kklisura/cdt/examples) would best describe what we can do using Chrome DevTools Protocol in Katalon Studio.
+Of course this library should work in the Groovy scripts in Katalon Studio. The list of [examples](https://github.com/kklisura/chrome-devtools-java-client/tree/master/cdt-examples/src/main/java/com/github/kklisura/cdt/examples) would best describe what we can do using Chrome DevTools Protocol in Katalon Studio.
 
 - [BlockUrlGivenPatternExample.java](https://github.com/kklisura/chrome-devtools-java-client/blob/master/cdt-examples/src/main/java/com/github/kklisura/cdt/examples/BlockUrlGivenPatternExample.java) --- opening `http://github.com` while blocking some links from fetching; specifed by Ant Fileset pattern such as `**/*.css`, `**/*.png`, `**/*.svg`
 - [BlockUrlExample.java](https://github.com/kklisura/chrome-devtools-java-client/blob/master/cdt-examples/src/main/java/com/github/kklisura/cdt/examples/BlockUrlsExample.java) --- opening `http://github.com` while blocking some links from fetching; specifed by filename extentions such as `.css`, `.png`
