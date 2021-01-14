@@ -22,12 +22,6 @@ However, we UI testers still want to read the `console.log()` in the automated U
 
 Chrome DevTools Protocol (a.k.a. CDP) supports [ConsoleAPICalled](https://chromedevtools.github.io/devtools-protocol/tot/Runtime/#event-consoleAPICalled) interface. The Chrome browser supports CDP fully. If we can utilize CDP in Katalon Studio Test Case, it would be possible to transfer the `console.log()` messages from Chrome browser to the test script. 
 
-An example of `console.log()` here:
-
-![404NotFound](images/404NotFound.png)
-
-
-
 Also FireFox browser provides [Remote Debugging Protocol](https://firefox-source-docs.mozilla.org/devtools/backend/protocol.html#remote-debugging-protocol) which supports the subset of CDP.
 
 To me it seems that major browser vendors (Google, Mozilla) are willing to support remote interface like CDP apart from the W3C WebDrvier standard. I think that CDP is worth studying.
