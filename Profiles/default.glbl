@@ -4,4 +4,9 @@
    <name>default</name>
    <tag></tag>
    <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description>client friendly name</description>
+      <initValue>'QA1-AliceScripts'</initValue>
+      <name>clientFriendlyName</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

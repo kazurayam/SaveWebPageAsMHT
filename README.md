@@ -11,7 +11,7 @@ I want to automate the following tasks by scripts in Katalon Studio:
 
 1. to take snapshot of current DOM of Web Page in browser, save it into a local file in the [MHTML](https://en.wikipedia.org/wiki/MHTML) format.
 
-2. to take full screenshots of a web page in multiple viewport sizes (with*height) just as I can do in Chrome DevTools using [Device Mode](https://www.deconetwork.com/blog/how-to-take-full-webpage-screenshots-instantly/) like Galaxy S5, Pixel 2, iPhone 6/7/8, iPad. I want screenshots in the size of PC display of XGA (1024px,768px) and SXGA (1280px,1024px) as well. I want to save the screenshots as *.png files.
+2. to take full screenshots of a web page in multiple viewport sizes (width*height) just as I can do in Chrome DevTools using [Device Mode](https://www.deconetwork.com/blog/how-to-take-full-webpage-screenshots-instantly/) like Galaxy S5, Pixel 2, iPhone 6/7/8, iPad. I want screenshots in the size of PC display of XGA (1024px,768px) and SXGA (1280px,1024px) as well. I want to save the screenshots as *.png files.
 
 ## Demo
 
@@ -70,7 +70,7 @@ I happend to find the following thread in the Puppeteer issues.
 
 - https://github.com/puppeteer/puppeteer/issues/3575
 
-This suggests that Chrome DevTools Protocol (also known as **CDP**) supports [`Page.captureSnapshot`](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-captureScreenshot) method, which turns the current DOM of web page into a String as MHTML. 
+This suggests that Chrome DevTools Protocol (also known as **CDP**) supports [`Page.captureSnapshot`](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-captureSnapshot) method, which turns the current DOM of web page into a String as MHTML. 
 
 This looked exactly what I want to do! I realised that my question was how to make use of `Page.captureSnapshot` method of CDP in Katalon Studio.
 
@@ -126,3 +126,24 @@ Katalon Studio has been solely dependent on Selenium WebDriver for Web UI testin
 What we could do in Katalon Studio stays within the scope of WebDriver. 
 Now I see, Chrome DevTools Protocol enables Web UI testers to do something exceeding the capability of WebDriver. For example, we can save web page into MHTML easily. CDP is interesting.
 I would look at CDP more deeply looking forward to its better use in Katalon Studio.
+
+
+## More researches
+
+### How to listen to console.log
+
+14 Jan, 2021
+
+I added an sample code "Test Cases/Listen to Console log". It shows how to write a Test Case in Katalon Studio that listens to the ConsoleAPICalled event
+via Chrome DevTools Protocol. 
+If the target web page has JavaScript codes that call `console.log(message)`, then the `message` will be transfered from browser
+back to the Test Case. The Test Case can consume the information as you like. 
+The sample code shows the message in the Katalon's Log Viewer.
+
+For more detail, see [docs/HowToListenToConsoleLog](docs/HowToListenToConsoleLog.md)
+
+### How to find broken references to web resources
+
+Is it possible to find broken references from a web page to stylesheets/javascripts/images if any? 
+
+Yes it is possible. For more detail, see [docs/HowToFindBrokenReferences](docs/HowToFindBrokenRefeerences.md)

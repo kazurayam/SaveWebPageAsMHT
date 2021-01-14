@@ -6,6 +6,7 @@
    <UUID>59813149-0160-443d-8e60-6266043611ae</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>/Users/kazuakiurayama/katalon-workspace/SaveWebPageAsMHT/SaveWebPageAsMHT.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
