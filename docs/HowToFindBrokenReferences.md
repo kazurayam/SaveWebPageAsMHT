@@ -21,9 +21,7 @@ Is it possible?
 
 ## Solution
 
-Chrome DevTools Protocol (a.k.a. CDP) supports []() and []() interface. The Chrome browser supports CDP fully. If we can utilize CDP in Katalon Studio Test Case, it would be possible to transfer the `console.log()` messages from Chrome browser to the test script. 
-
-
+Chrome DevTools Protocol (a.k.a. CDP) supports [Event Network.requestWillBeSent](https://chromedevtools.github.io/devtools-protocol/tot/Network/#event-requestWillBeSent) and [Event Network.responseReceived](https://chromedevtools.github.io/devtools-protocol/tot/Network/#event-responseReceived) interface. The Chrome browser supports CDP fully. If we can utilize CDP in Katalon Studio Test Case, it would be possible let Chrome browser to inform the test script of these events. 
 
 
 ## Description
