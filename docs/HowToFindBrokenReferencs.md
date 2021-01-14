@@ -26,13 +26,6 @@ Is it possible?
 Chrome DevTools Protocol (a.k.a. CDP) supports []() and []() interface. The Chrome browser supports CDP fully. If we can utilize CDP in Katalon Studio Test Case, it would be possible to transfer the `console.log()` messages from Chrome browser to the test script. 
 
 
-## Prerequisites
-
-You need to install the "Chrome DevTools Protocol Integration" plugin into your local Katalon Studio.
-It is avaliable fre at
-https://store.katalon.com/product/144/Chrome-DevTools-Protocol-Integration
-
-I tested this project using Katalon Studio version 7.6.6.
 
 
 ## Description
@@ -126,3 +119,12 @@ response: 200 OK https://katalon-demo-cura.herokuapp.com//img/header.jpg
 ```
 
 Please remark a line of "404 Not Found" here. This sample code just print the line. Of course you can do anything as you like.
+
+
+### Prerequisites
+
+You need to install the "Chrome DevTools Protocol Integration" plugin into your local Katalon Studio.
+It is avaliable fre at
+https://store.katalon.com/product/144/Chrome-DevTools-Protocol-Integration
+
+I tested this project using Katalon Studio version 7.6.6.

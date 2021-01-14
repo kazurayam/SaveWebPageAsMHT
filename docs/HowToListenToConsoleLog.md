@@ -87,9 +87,9 @@ This web page called 'console.log()' twice, and emitted 2 messages:
 - `>>>LOG content script: Katalon Waiter v.2 is up and running !`
 - `>>>LOG 2021/1/14 7:46:6`
 
-Printing the messages are too simplee. You can process the messages more sophisticated way. You would be able to make assertions over the messages. What should you do? It is totally up to you.
+Printing the messages are simple. But you can process the messages more sophisticated way as you like.
 
-### Prerequisites
+## Prerequisites
 
 You need to install the "Chrome DevTools Protocol Integration" plugin into your local Katalon Studio.
 It is avaliable fre at
