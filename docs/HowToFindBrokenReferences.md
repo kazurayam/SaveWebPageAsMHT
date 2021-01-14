@@ -13,11 +13,9 @@ Here you can see an error message:
 
 This message tells me that the web page has broken references to stylesheets/javascripts/images. Developers and testers would be interested this type of error messages.
 
-Chrome DevTools provides wonderful Console tab where you are alarmed tones of alarms:
+[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/console/log) provides wonderful Console tab where you are alarmed all of mistakenly broken references.
 
-- https://developers.google.com/web/tools/chrome-devtools/console/log
-
-But I have to operate the tool manually, which could be cumbersome. Say, I have 300 URLs to check if they have any broken references. Then I want to automate checking all of them. I want my Katalon Test Case to get access to the "404 Not Found" error messages which is visible in the DevTools Console tab.
+But I have to operate the GUI tool manually, which could be cumbersome. Say, I have 300 URLs to check if they have any broken references. Then I want to automate checking all of them. I want my Katalon Test Case to get access to the "404 Not Found" error messages which is visible in the DevTools Console tab.
 
 Is it possible?
 
