@@ -32,7 +32,7 @@ To me it seems that major browser vendors (Google, Mozilla) are willing to suppo
 
 You can see a working sample Test case:
 
-- [Test Cases/Listen to Console log](Scripts/Listen%20to%20Console%20log/Script1610443410700.groovy)
+- [Test Cases/Listen to Console log](../Scripts/Listen%20to%20Console%20log/Script1610443410700.groovy)
 
 Let me copy the partial source and paste here for easier reference:
 

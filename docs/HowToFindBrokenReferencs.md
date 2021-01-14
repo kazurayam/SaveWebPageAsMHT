@@ -40,7 +40,7 @@ I tested this project using Katalon Studio version 7.6.6.
 ### Code
 
 The sample code is
-[Test Cases/Log Requests and Responses](Scripts/Log%20Requests%20and%20Responses/Script1610620664750.groovy)
+[Test Cases/Log Requests and Responses](../Scripts/Log%20Requests%20and%20Responses/Script1610620664750.groovy)
 
 Here I copy&paste the fragment here for easier reference:
 
