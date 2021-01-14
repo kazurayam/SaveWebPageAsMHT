@@ -3,7 +3,16 @@ How to listen to console.log from Chrome to Katalon Studio via Chrome DevTools P
 
 ## Problem to solve
 
-Calling `console.log(message)` API in JavaScript in web pages is ubiquitous. You can see the messages in the Console tabs of Browser Developer Tools. Russ Thomas gave us [a nice tutorial about the Developer Tools](https://forum.katalon.com/t/how-to-use-the-browser-developer-tools-f12-devtools/34329). It is natural that WebUI testers want to transfer the messages that apprears in the Broswer console into automated test scripts like Katalon Studio's Test Cases.
+Calling `console.log(message)` API in JavaScript in web pages is ubiquitous. You can see the messages in the Console tabs of Browser Developer Tools. Russ Thomas gave us [a nice tutorial about the Developer Tools](https://forum.katalon.com/t/how-to-use-the-browser-developer-tools-f12-devtools/34329). It is natural that WebUI testers want to transfer the messages that apprears in the Broswer console into automated test scripts like Katalon Studio's Test Cases. I would show you an example of `console.log`:
+
+![404NotFound](images/404NotFound.png)
+
+In the Console tab you find a line
+
+>`2021/1/14 10:47:43`
+
+This is the output of `console.log()` performed by a javascript in the web page.
+
 
 [Once upon a time](https://forum.katalon.com/t/console-logging-selenium-and-katalon/12100/7), there was an API called "Selenium WebDriver API" which supported "Logging API". Using its Logging API, automated-test scripts could read messages writen by JavaScript 'console.log(msssage)' calls in browser. However nowadays (I am writing this at Jan 2021) "Selenium WebDrvier API" is already obsolete. W3C has defined at 2018 the standard [WebDriver](https://www.w3.org/TR/webdriver1/) specification. The standard spec did not include "Logging API". So all browsers have ceased support for "Logging API".
 
@@ -12,6 +21,12 @@ However, we UI testers still want to read the `console.log()` in the automated U
 ## How to solve it
 
 Chrome DevTools Protocol (a.k.a. CDP) supports [ConsoleAPICalled](https://chromedevtools.github.io/devtools-protocol/tot/Runtime/#event-consoleAPICalled) interface. The Chrome browser supports CDP fully. If we can utilize CDP in Katalon Studio Test Case, it would be possible to transfer the `console.log()` messages from Chrome browser to the test script. 
+
+An example of `console.log()` here:
+
+![404NotFound](images/404NotFound.png)
+
+
 
 Also FireFox browser provides [Remote Debugging Protocol](https://firefox-source-docs.mozilla.org/devtools/backend/protocol.html#remote-debugging-protocol) which supports the subset of CDP.
 
