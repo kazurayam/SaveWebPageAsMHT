@@ -146,4 +146,4 @@ For more detail, see [docs/HowToListenToConsoleLog](docs/HowToListenToConsoleLog
 
 Is it possible to find broken references from a web page to stylesheets/javascripts/images if any? 
 
-Yes it is possible. For more detail, see [docs/HowToFindBrokenReferences](docs/HowToFindBrokenRefeerences.md)
+Yes it is possible. For more detail, see [docs/HowToFindBrokenReferences](docs/HowToFindBrokenReferences.md)
