@@ -3,7 +3,7 @@ How to find broken references from a web page to stylesheets/javascripts/images
 
 ## Problem to solve
 
-When I open https://katalon-demo-cura.herokuapp.com/ in Chrome browser, in the Chrome DevTools' Console tab, I saw an error message:
+When I open http://demoaut-mimic.kazurayam.com/ in Chrome browser, in the Chrome DevTools' Console tab, I saw an error message:
 
 ![404NotFound](images/404NotFound.png)
 
