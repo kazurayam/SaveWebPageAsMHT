@@ -1,16 +1,16 @@
 From: <Saved by Blink>
 Snapshot-Content-Location: https://katalon-demo-cura.herokuapp.com/
 Subject: CURA Healthcare Service
-Date: Wed, 18 Nov 2020 14:11:01 -0000
+Date: Wed, 6 Oct 2021 01:05:26 -0000
 MIME-Version: 1.0
 Content-Type: multipart/related;
 	type="text/html";
-	boundary="----MultipartBoundary--JUGRHw9UUbWsvJo7x3kAf40eOZp8hHIdkhkdsrnWou----"
+	boundary="----MultipartBoundary--KD2A5ZLC0HfOVijjkFCRoAuOteh7H1E8oHTU7QUqzT----"
 
 
-------MultipartBoundary--JUGRHw9UUbWsvJo7x3kAf40eOZp8hHIdkhkdsrnWou----
+------MultipartBoundary--KD2A5ZLC0HfOVijjkFCRoAuOteh7H1E8oHTU7QUqzT----
 Content-Type: text/html
-Content-ID: <frame-2FB8E2C801C9E0A13267EE36DB54EF75@mhtml.blink>
+Content-ID: <frame-E96FF4C4845A457BE94636A7C062DB8E@mhtml.blink>
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://katalon-demo-cura.herokuapp.com/
 
@@ -124,7 +124,7 @@ nt</a>
                 </ul>
                 <hr class=3D"small">
                 <p class=3D"text-muted">Copyright =C2=A9 CURA Healthcare Se=
-rvice 2020</p>
+rvice 2021</p>
             </div>
         </div>
     </div>
@@ -142,7 +142,7 @@ class=3D"btn btn-dark btn-lg"><i class=3D"fa fa-chevron-up fa-fw fa-1x"></i=
 
 
 </body></html>
-------MultipartBoundary--JUGRHw9UUbWsvJo7x3kAf40eOZp8hHIdkhkdsrnWou----
+------MultipartBoundary--KD2A5ZLC0HfOVijjkFCRoAuOteh7H1E8oHTU7QUqzT----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css
@@ -2060,8 +2060,7 @@ down-menu > .disabled > a:hover { color: rgb(119, 119, 119); }
 .dropdown-header { display: block; padding: 3px 20px; font-size: 12px; line=
 -height: 1.42857; color: rgb(119, 119, 119); white-space: nowrap; }
 
-.dropdown-backdrop { position: fixed; top: 0px; right: 0px; bottom: 0px; le=
-ft: 0px; z-index: 990; }
+.dropdown-backdrop { position: fixed; inset: 0px; z-index: 990; }
 
 .pull-right > .dropdown-menu { right: 0px; left: auto; }
 
@@ -3461,8 +3460,8 @@ button.close { appearance: none; padding: 0px; cursor: pointer; background:=
 
 .modal-open { overflow: hidden; }
 
-.modal { position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; z-i=
-ndex: 1050; display: none; overflow: hidden; outline: 0px; }
+.modal { position: fixed; inset: 0px; z-index: 1050; display: none; overflo=
+w: hidden; outline: 0px; }
 
 .modal.fade .modal-dialog { transition: transform 0.3s ease-out 0s; transfo=
 rm: translate(0px, -25%); }
@@ -3477,8 +3476,8 @@ rm: translate(0px, -25%); }
 background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.2); border-=
 radius: 6px; outline: 0px; box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 9px; }
 
-.modal-backdrop { position: fixed; top: 0px; right: 0px; bottom: 0px; left:=
- 0px; z-index: 1040; background-color: rgb(0, 0, 0); }
+.modal-backdrop { position: fixed; inset: 0px; z-index: 1040; background-co=
+lor: rgb(0, 0, 0); }
 
 .modal-backdrop.fade { opacity: 0; }
 
@@ -3785,41 +3784,41 @@ visible-sm-inline, .visible-sm-inline-block, .visible-xs-block, .visible-xs=
   .visible-xs-inline-block { display: inline-block !important; }
 }
 
-@media (max-width: 991px) and (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .visible-sm { display: block !important; }
   table.visible-sm { display: table !important; }
   tr.visible-sm { display: table-row !important; }
   td.visible-sm, th.visible-sm { display: table-cell !important; }
 }
 
-@media (max-width: 991px) and (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .visible-sm-block { display: block !important; }
 }
 
-@media (max-width: 991px) and (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .visible-sm-inline { display: inline !important; }
 }
 
-@media (max-width: 991px) and (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .visible-sm-inline-block { display: inline-block !important; }
 }
 
-@media (max-width: 1199px) and (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .visible-md { display: block !important; }
   table.visible-md { display: table !important; }
   tr.visible-md { display: table-row !important; }
   td.visible-md, th.visible-md { display: table-cell !important; }
 }
 
-@media (max-width: 1199px) and (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-block { display: block !important; }
 }
 
-@media (max-width: 1199px) and (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-inline { display: inline !important; }
 }
 
-@media (max-width: 1199px) and (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-inline-block { display: inline-block !important; }
 }
 
@@ -3846,11 +3845,11 @@ visible-sm-inline, .visible-sm-inline-block, .visible-xs-block, .visible-xs=
   .hidden-xs { display: none !important; }
 }
 
-@media (max-width: 991px) and (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .hidden-sm { display: none !important; }
 }
 
-@media (max-width: 1199px) and (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .hidden-md { display: none !important; }
 }
 
@@ -3888,7 +3887,7 @@ visible-sm-inline, .visible-sm-inline-block, .visible-xs-block, .visible-xs=
 @media print {
   .hidden-print { display: none !important; }
 }
-------MultipartBoundary--JUGRHw9UUbWsvJo7x3kAf40eOZp8hHIdkhkdsrnWou----
+------MultipartBoundary--KD2A5ZLC0HfOVijjkFCRoAuOteh7H1E8oHTU7QUqzT----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css
@@ -4151,7 +4150,7 @@ px; }
 ext-align: center; text-shadow: rgb(255, 255, 255) 0px 1px 0px; vertical-al=
 ign: middle; background-color: rgb(238, 238, 238); border: 1px solid rgb(20=
 4, 204, 204); margin-left: -5px; margin-right: -5px; }
-------MultipartBoundary--JUGRHw9UUbWsvJo7x3kAf40eOZp8hHIdkhkdsrnWou----
+------MultipartBoundary--KD2A5ZLC0HfOVijjkFCRoAuOteh7H1E8oHTU7QUqzT----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://katalon-demo-cura.herokuapp.com//css/theme.css
@@ -4229,7 +4228,7 @@ footer { padding: 100px 0px; }
 
 #to-top { display: none; position: fixed; bottom: 5px; right: 5px; z-index:=
  1030; }
-------MultipartBoundary--JUGRHw9UUbWsvJo7x3kAf40eOZp8hHIdkhkdsrnWou----
+------MultipartBoundary--KD2A5ZLC0HfOVijjkFCRoAuOteh7H1E8oHTU7QUqzT----
 Content-Type: image/jpeg
 Content-Transfer-Encoding: base64
 Content-Location: https://katalon-demo-cura.herokuapp.com//img/header.jpg
@@ -10891,7 +10890,7 @@ xyAVcUXA/wB1xAJB+z+I4bKtEPrGLzmtEwVMfx/9hhhu/tEw4TCTNhN7IQBvXtICO7KfjUQPkWMm
 3ug4guHNQK1KlZh9B/g34uXBgwzDAlRVBlRIy5cuXLgzNGMwbhx/z+P4hSVLiDo9SpR2iQfsh1iY
 vqOYUIOIFytnlfCM0TJb6iodx263GGmf/9k=
 
-------MultipartBoundary--JUGRHw9UUbWsvJo7x3kAf40eOZp8hHIdkhkdsrnWou----
+------MultipartBoundary--KD2A5ZLC0HfOVijjkFCRoAuOteh7H1E8oHTU7QUqzT----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
@@ -12386,7 +12385,7 @@ n: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); border: 0px; }
 
 .sr-only-focusable:active, .sr-only-focusable:focus { position: static; wid=
 th: auto; height: auto; margin: 0px; overflow: visible; clip: auto; }
-------MultipartBoundary--JUGRHw9UUbWsvJo7x3kAf40eOZp8hHIdkhkdsrnWou----
+------MultipartBoundary--KD2A5ZLC0HfOVijjkFCRoAuOteh7H1E8oHTU7QUqzT----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic
@@ -12620,4 +12619,4 @@ t: 700; src: url("https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcS=
 V-LCoeQqfX1RYOo3ig4vwlxdu3cOWxw.woff2") format("woff2"); unicode-range: U+0=
 -FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074,=
  U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-------MultipartBoundary--JUGRHw9UUbWsvJo7x3kAf40eOZp8hHIdkhkdsrnWou------
+------MultipartBoundary--KD2A5ZLC0HfOVijjkFCRoAuOteh7H1E8oHTU7QUqzT------

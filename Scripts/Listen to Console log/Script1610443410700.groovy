@@ -8,9 +8,11 @@ import com.github.kklisura.cdt.protocol.types.runtime.RemoteObject
 import com.github.kklisura.cdt.services.ChromeDevToolsService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.katalon.cdp.CdpUtils
+import com.kazurayam.cdp.ChromeDevToolsProtocolSupport
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.webui.driver.DriverFactory
+import org.openqa.selenium.WebDriver
 
 /**
  * This is a Test Case script that only works in Katalon Studio.
@@ -30,12 +32,13 @@ WebUI.openBrowser('')
 WebUI.setViewPortSize(1024,768)
 
 /** Get DevTools Service to a tab in Chrome browser opened by Katalon Studio */
-ChromeDevToolsService devToolsService = CdpUtils.getService()
+WebDriver driver = DriverFactory.getWebDriver()
+ChromeDevToolsService devToolsService = ChromeDevToolsProtocolSupport.getService(driver)
 
 /** Get indivisual CDP commands */
 Page page = devToolsService.getPage()
-Runtime runtime = devToolsService.getRuntime()
 page.enable()
+Runtime runtime = devToolsService.getRuntime()
 runtime.enable()
 
 /** Listen to the events that JavaScript console.log(msg) was 
