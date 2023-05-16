@@ -11,13 +11,13 @@ import com.github.kklisura.cdt.services.types.ChromeTab
 /**
  * A set of helper methods for a E2E test in Java to activate com.github.kklisura.cdt.services.ChromeDevToolsSerivce
  * which enables the test to save the MIME HTML file of a web page rendered on a Chrome browser. It is assumed that
- * the browser has been opened by Selenium WebDriver. 
- * 
+ * the browser has been opened by Selenium WebDriver.
+ *
  * The original is written by Katalon, hosted at
  * https://github.com/katalon-studio/katalon-studio-chrome-devtools-protocol-plugin/blob/master/Include/scripts/groovy/com/katalon/cdp/CdpUtils.groovy
  * but I modified it to make it independent on the Katalon API
- * 
- * @author kazuakiurayama
+ *
+ * @author kazurayam
  */
 public class ChromeDevToolsProtocolSupport {
 
