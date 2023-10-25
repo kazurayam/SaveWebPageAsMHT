@@ -1,14 +1,14 @@
+import org.openqa.selenium.WebDriver
+
 import com.github.kklisura.cdt.protocol.commands.Network
 import com.github.kklisura.cdt.protocol.commands.Page
-import com.github.kklisura.cdt.protocol.commands.Runtime
-import com.github.kklisura.cdt.protocol.events.page.LoadEventFired
 import com.github.kklisura.cdt.protocol.events.network.RequestWillBeSent
 import com.github.kklisura.cdt.protocol.events.network.ResponseReceived
-import com.github.kklisura.cdt.protocol.types.network.ResourceType
+import com.github.kklisura.cdt.protocol.events.page.LoadEventFired
 import com.github.kklisura.cdt.protocol.types.network.Response
-import com.github.kklisura.cdt.protocol.types.runtime.Evaluate
 import com.github.kklisura.cdt.services.ChromeDevToolsService
-import com.katalon.cdp.CdpUtils
+import com.kazurayam.cdp.ChromeDevToolsProtocolSupport
+import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 /**
@@ -22,7 +22,8 @@ WebUI.setViewPortSize(1024,768)
 
 /** Get DevTools service to a tab in Chrome browser
  */
-ChromeDevToolsService devToolsService = CdpUtils.getService()
+WebDriver driver = DriverFactory.getWebDriver()
+ChromeDevToolsService devToolsService = ChromeDevToolsProtocolSupport.getService(driver)
 
 /** Get indivisual CDP commands
  */

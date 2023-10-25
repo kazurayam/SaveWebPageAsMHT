@@ -1,9 +1,12 @@
-import com.github.kklisura.cdt.protocol.commands.Emulation as Emulation
-import com.github.kklisura.cdt.protocol.commands.Page as Page
-import com.github.kklisura.cdt.services.ChromeDevToolsService as ChromeDevToolsService
-import com.katalon.cdp.CdpUtils
+import com.github.kklisura.cdt.protocol.commands.Emulation
+import com.github.kklisura.cdt.protocol.commands.Page
+import com.github.kklisura.cdt.services.ChromeDevToolsService
+import com.kazurayam.cdp.ChromeDevToolsProtocolSupport
+import com.kms.katalon.core.driver.DriverType
+import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.webui.driver.WebUIDriverType
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
+import com.kms.katalon.core.util.KeywordUtil
 
 /**
  * Origin:
@@ -13,10 +16,17 @@ WebUI.openBrowser('')
 WebUI.setViewPortSize(1024,768)
 WebUI.navigateToUrl('http://demoaut.katalon.com/')
 
-ChromeDevToolsService cdts = CdpUtils.getService()
-
-saveWebPageAsMHTML(cdts, 'tmp/snapshot.mht')
-
+switch ((WebUIDriverType)DriverFactory.getExecutedBrowser()) {
+	case WebUIDriverType.CHROME_DRIVER:
+	case WebUIDriverType.HEADLESS_DRIVER:
+		ChromeDevToolsService cdts = ChromeDevToolsProtocolSupport.getService(DriverFactory.getWebDriver())
+		saveWebPageAsMHTML(cdts, 'tmp/snapshot.mht')
+		break
+	default:
+		DriverType dt = DriverFactory.getExecutedBrowser()
+		KeywordUtil.markFailed("Browser is ${(WebUIDriverType)dt}; this doesn't support Chrome DevTools Protocol")
+		break
+}
 WebUI.closeBrowser()
 
 def saveWebPageAsMHTML(ChromeDevToolsService devToolsService, String outputFileName) {
