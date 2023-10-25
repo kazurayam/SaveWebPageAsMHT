@@ -17,6 +17,4 @@ build
 
 .DS_Store
 
-settings/
-
 .cache/
