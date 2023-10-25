@@ -34,8 +34,8 @@ ChromeDevToolsService devToolsService = CdpUtils.getService()
 
 /** Get indivisual CDP commands */
 Page page = devToolsService.getPage()
-Runtime runtime = devToolsService.getRuntime()
 page.enable()
+Runtime runtime = devToolsService.getRuntime()
 runtime.enable()
 
 /** Listen to the events that JavaScript console.log(msg) was 
